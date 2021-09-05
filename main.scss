@@ -1,0 +1,167 @@
+$cream: #F9F1F0;
+$roseQuartz: #f9c5d2;
+$dustyRose: #F8AFA6;
+$coral: #fe789c;
+$coffeePot: #533239;
+$darkCoffee: #463c40;
+
+$evenColor: #fca5c4;
+$oddColor: #e5df63;
+
+$tilt: 3.5deg;
+
+* {
+    font-family: sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+
+    font-weight: normal;
+}
+
+body {
+    margin: 0;
+}
+
+main {
+    width: 100%;
+    overflow: hidden;
+}
+
+.background {
+    background-image: url('images/blossoms.webp');
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: -10;
+}
+
+.titleContainer {
+    height: 100vh;
+    width: 100%;
+    // background-image: url('images/blossoms.webp');
+    margin: 0;
+    display: grid;
+    place-items: center;
+}
+
+.titleCard {
+    width: 45%;
+    background: rgba(black,.75);
+    border-radius: .5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: whitesmoke;
+    padding: 2rem;
+
+    h1{
+        margin: .5rem 0;
+        font-size: 3em;
+    }
+
+    h3 {
+        margin: 0;
+        font-size: 2rsem;
+    }
+}
+
+.bioContainer {
+    background: $roseQuartz;
+    border-top: 1px solid rgba($coffeePot, .75);
+    border-bottom: 1px solid rgba($coffeePot, .75);
+    // padding-bottom: 100px;
+
+    .bioCard {
+        display: flex;
+        width: 80%;
+        margin: 0 auto;
+        align-items: center;
+        padding: 50px;
+
+        article {
+            color: $coffeePot;
+            font-size: 1.25rem;
+        }
+
+        img {
+            width: 250px;
+            border-radius: 50%;
+            border: 1px solid $coffeePot;
+        }
+    }
+}
+
+.projectContainer{
+    min-height: 450px;
+    margin: 100px -50px;
+    // margin-top: -100px;
+    // padding: 25px 0;
+    display: flex;
+    justify-content: center;
+    border: 1px solid rgba($coffeePot, .75);
+
+    img {
+        width: 450px;
+    }
+
+    article {
+        margin: 0 1em 1em 1em;
+        // margin-left: 1rem;
+        // margin-bottom: 1em;
+        font-size: 1.25rem;
+    }
+
+    &:nth-of-type(odd){
+        background: $oddColor;
+        transform:rotate(-$tilt);
+        color: $coffeePot;
+
+        img {
+            border: 1px solid $darkCoffee;
+        }
+
+        .projectCard{
+            transform: rotate($tilt);
+        }
+    }
+
+    &:nth-of-type(even) {
+        background: $evenColor;
+        transform:rotate($tilt);
+        color: $coffeePot;
+
+        img {
+            border: 1px solid $coffeePot;
+        }
+
+        .projectCard {
+            transform: rotate(-$tilt);
+        }
+    }
+
+    .projectCard {
+        width: 80%;
+
+        h1 {
+            text-align: center;
+            margin-bottom: 0;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 1rem;
+            margin-top: 0;
+        }
+    }
+
+    .cardBody {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
