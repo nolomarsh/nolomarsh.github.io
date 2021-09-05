@@ -8,10 +8,10 @@ $darkCoffee: #463c40;
 $evenColor: #fca5c4;
 $oddColor: #e5df63;
 
-$tilt: 3.5deg;
+$tilt: 3deg;
 
 * {
-    font-family: sans-serif;
+    font-family: "Glory", sans-serif;
 }
 
 a {
@@ -59,12 +59,12 @@ main {
     padding: 2rem;
 
     h1{
-        margin: .5rem 0;
+        margin: 0;
         font-size: 3em;
     }
 
     h3 {
-        margin: 0;
+        margin: .5rem 0;
         font-size: 2rsem;
     }
 }
@@ -96,17 +96,16 @@ main {
 }
 
 .projectContainer{
-    min-height: 450px;
+    height: 450px;
     margin: 100px -50px;
     // margin-top: -100px;
     // padding: 25px 0;
     display: flex;
     justify-content: center;
     border: 1px solid rgba($coffeePot, .75);
+    overflow: hidden;
 
-    img {
-        width: 450px;
-    }
+
 
     article {
         margin: 0 1em 1em 1em;
@@ -120,12 +119,21 @@ main {
         transform:rotate(-$tilt);
         color: $coffeePot;
 
-        img {
+        .backImg {
+            height: 150%;
+            transform: rotate(20deg);
+            position: absolute;
+            right: 125px;
+        }
+
+        .screenshot {
             border: 1px solid $darkCoffee;
         }
 
         .projectCard{
             transform: rotate($tilt);
+            // position: absolute;
+            left: 10%;
         }
     }
 
@@ -134,12 +142,21 @@ main {
         transform:rotate($tilt);
         color: $coffeePot;
 
-        img {
+        .backImg {
+            height: 150%;
+            transform: rotate(-20deg);
+            position: absolute;
+            left: 125px;
+            z-index: 0;
+        }
+
+        .screenshot {
             border: 1px solid $coffeePot;
         }
 
         .projectCard {
             transform: rotate(-$tilt);
+            z-index: 1;
         }
     }
 
@@ -163,5 +180,9 @@ main {
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        img {
+            width: 450px;
+        }
     }
 }
